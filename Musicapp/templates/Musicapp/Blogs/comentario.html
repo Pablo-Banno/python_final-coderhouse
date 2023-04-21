@@ -1,0 +1,23 @@
+{% extends 'Musicapp/main.html' %}
+
+{% block titulo %}
+    Crear comentario
+{% endblock %}
+
+{% block contenido %}
+
+<br>
+<br>
+
+<div class="container">
+    <h1>Agrega un Comentario</h1>
+    <div class="form-group">
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<br>
+{% endblock %}

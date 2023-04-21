@@ -1,0 +1,37 @@
+{% extends 'Musicapp/main.html' %}
+
+{% block titulo %}
+    Blogs
+{% endblock %}
+
+{% block contenido %}
+        <div class="container text-center mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Blogs</h2>
+                        <hr>
+                        <div class="row">
+                            
+                                {% for blog in object_list %}
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="card mt-4">
+                                        <img class="card-img-top" src="{{blog.imagenBlog.url}}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ blog.titulo }}</h5>
+                                            <p class="card-text">{{ blog.genero }}</p>
+                                            <p class="card-text">{{ blog.descripcion }}</p>
+                                            <a href="{% url 'detalle-blog' blog.id %}" class="btn btn-primary">Ver</a>
+                                            {% if request.user == blog.usuario %}
+                                            <a href="{% url 'editar-blog' blog.id %}" class="btn btn-info">Editar</a>
+                                            <a href="{% url 'eliminar-blog' blog.id %}" class="btn btn-warning">Eliminar</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>  
+                </div>
+            </div>
+        </div>
+
+{% endblock contenido %}

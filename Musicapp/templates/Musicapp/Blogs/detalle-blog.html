@@ -1,0 +1,45 @@
+{% extends 'Musicapp/main.html' %}
+
+{% block titulo %}
+    Detalles Blogs
+{% endblock %}
+
+{% block contenido %}
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container text-center mt-5">
+
+            <p><h2>{{blog.titulo}}</h2></p>
+            {% if blog.imagenBlog %}
+                <p><img src="{{blog.imagenBlog.url}}" alt="" width="500px"></p>
+            {% endif %}
+            <p>Genero: {{blog.genero}}</p>
+            <p>Descripción: {{blog.descripcion}}</p>
+            <p>Fecha: {{blog.fechaPublicacion}}</p>
+            
+            </div>
+            <br>
+            <div class="container">
+                <h4>Comentarios...</h4>
+                <br>
+                <div class="container">
+                {% if not blog.comentarios.all %}
+                    No han comentado este instrumento
+                {% else %}
+                    {% for comentario in blog.comentarios.all %}
+                    <p><strong>{{comentario.nombre}}</strong></p>
+                    <p>{{comentario.mensaje}}</p>
+                    <p><small>{{comentario.fechaComentario}}</small></p>
+                    <hr>
+                    {% endfor %}
+                {% endif %}
+                <a href="{% url 'comentario' blog.pk %}">Agrega un Comentario</a>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+{% endblock contenido %}

@@ -1,0 +1,50 @@
+{% extends 'Musicapp/main.html' %}
+
+{% block titulo %}
+    Inicio
+{% endblock %}
+
+{% block contenido %}
+    <!-- Inicio -->
+    <br>
+    <br>
+    <br>
+    <section id="home" class="text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+      <div class="container text-center">
+        <div class="">
+            <div>
+                <h2 class="text-secondary">Bienvenidos al mejor blog musical. Comparte tus gustos en <span class="text-primary">Musicapp</span></h2>
+            </div>
+        </div>
+    </div>
+    
+    </section>
+    
+    
+        <!-- Link Venta/Permuta Instrumento -->
+    
+        <section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+          <div class="container">
+              <div class="">
+                  <div class="text-center">
+                      <p class="lead my-4">
+                        Empieza ahora
+                      </p>
+                      <a href="{% url 'lista-blogs' %}"><button type="submit" class="btn btn-primary">Ver blogs</button></a>
+                  </div>
+              </div>
+          </div>
+      </section>
+    
+       
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+{% endblock contenido %}

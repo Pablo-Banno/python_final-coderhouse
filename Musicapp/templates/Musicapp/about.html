@@ -1,0 +1,43 @@
+{% extends 'Musicapp/main.html' %}
+{% load static %}
+
+{% block titulo %}
+    Acerca de mi
+{% endblock %}
+
+{% block contenido %}
+<br>
+<br>
+
+    <div class="container">
+       <h2 class="text-center text-light">
+           Acerca de Mi
+       </h2>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img src="{% static 'imagenes/Face.jpg' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title text-dark mb-3">Banno Pablo Nicolás</h3>
+                    <p class="card-text text-dark">Software Engineer</p>
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                 <div class="text-center">
+                    <p>Hola que tal, mi nombre es Pablo, soy estudiante de la Lic. en Inteligencia Artificial y Robótica de la Siglo 21.</p>
+                 </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}
